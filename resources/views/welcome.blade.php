@@ -85,6 +85,14 @@
 </head>
 <body>
 
+<audio src="{{ URL::asset('teste.wav') }}" autoplay id="audioFundo">
+    bla bla bla
+</audio>
+
+<script>
+    var audio = document.getElementById("audioFundo");
+    audio.volume = 0.1 ;
+</script>
 
 <div class="flex-center position-ref full-height">
     @if (Route::has('login'))
@@ -148,6 +156,7 @@
 
                 var occasion = "ativar PROTOCOLO/COMO_SE_FOSSE_A_PRIMEIRA_VEZ"
                 var message_on_occasion = "Protocolo/COMO_SE_FOSSE_A_PRIMEIRA_VEZ foi ativado."
+
 
 
                 var countdownwidth = '1210px'

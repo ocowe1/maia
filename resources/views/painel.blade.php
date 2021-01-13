@@ -110,7 +110,7 @@
         <table class="table table-striped table-bordered">
 
             @auth
-                @if(Auth()->user()->tipo === 3)
+                @if(Auth()->user()->tipo === 1)
                     <div align="right">
                         <button class="btn btn-sm btn-info" data-toggle="modal" data-target="#create-user">
                             Adicionar Usuário
@@ -217,14 +217,14 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" name="email" placeholder="Digite o Email">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Digite o Email">
                             <small id="email" class="form-text text-muted">Digite o email do usuário para qual devo
                                 enviar o acesso ao protocolo</small>
                         </div>
 
                         <div class="form-group">
                             <label for="celular">Celular</label>
-                            <input type="number" class="form-control" name="celular" placeholder="Digite o celular">
+                            <input type="number" class="form-control" name="celular" id="celular" placeholder="Digite o celular">
                         </div>
                     </div>
                     <div class="modal-footer">

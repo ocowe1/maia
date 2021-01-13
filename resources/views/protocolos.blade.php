@@ -50,7 +50,9 @@
              aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form method="post" action="{{ route('assimilar-protocolo', ['id' => $protocolo->id]) }}">
+                    @foreach($protocolos as $protocolo)
+                        <form method="post" action="{{ route('assimilar-protocolo', ['id' => $protocolo->id]) }}">
+                    @endforeach
                         @csrf
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">Assimilar Protocolo</h5>

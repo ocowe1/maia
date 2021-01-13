@@ -34,14 +34,6 @@ class CreateUsersTable extends Migration
                     'celular' => '13981575072',
                     'email' => 'viniciusath@hotmail.com',
                     'password' => \Illuminate\Support\Facades\Hash::make('Zulo!1999.'),
-                ],
-                [
-                    'name' => 'Vitor Duarte',
-                    'tipo' => 2,
-                    'celular' => '12981403677',
-                    'email' => 'vitorduartefrota@gmail.com',
-                    'password' => \Illuminate\Support\Facades\Hash::make('protocolomaia')
-
                 ]
             ]);
 

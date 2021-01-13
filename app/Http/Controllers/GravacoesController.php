@@ -20,7 +20,7 @@ class GravacoesController extends Controller
     {
         $this->middleware('auth');
         $this->middleware(function ($request, $next) {
-            if(Auth::user()->tipo !== 3)
+            if(Auth::user()->tipo === 3)
             {
                 return redirect ()->route ('maia');
             }
