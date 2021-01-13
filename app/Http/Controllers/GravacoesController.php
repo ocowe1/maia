@@ -34,8 +34,9 @@ class GravacoesController extends Controller
     public function exibirGravacoes()
     {
         $gravacoes = $this->gravacoesRepository->getGravacoes ();
+        $gravacaoDados = $gravacoes->items();
         $protocolos = $this->protocolosRepository->getProtocoloNome ();
-        return view ('verGravacoes', compact (['gravacoes', 'protocolos']));
+        return view ('verGravacoes', compact (['gravacoes', 'protocolos', 'gravacaoDados']));
     }
 
     public function upload()
@@ -96,7 +97,7 @@ class GravacoesController extends Controller
 
         foreach ($protocoloSelecionado as $protocolo)
         {
-            $this->gravacoesRepository->assimilarProtocoloGravacao($id, $protocolo);
+            dd($this->gravacoesRepository->assimilarProtocoloGravacao($id, $protocolo));
         }
 
         return redirect ('gravacoes')->with ('sucesso', 'Gravacao Assimildada Com Sucesso');

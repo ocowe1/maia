@@ -79,6 +79,60 @@
     </div>
 </div>
 
+@foreach($gravacaoDados as $g)
+    {{ var_dump($gravacaoDados[]->id) }}
+    {{ dd($g) }}
+    <form method="post" action="{{ route('assimilar-gravacao', ['id' => $g]) }}">
+        @endforeach
+
+<div class="modal fade" id="assimilar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+
+
+
+                    @csrf
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Assimilar Gravação</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="protocolos-assimilar">Protocolos</label>
+
+                            <select multiple="multiple" class="protocolos form-control" name="protocolos-assimilar[]"
+                                    id="protocolos-assimilar">
+
+                                @foreach($protocolos as $p)
+                                    <option value="{{ $p->id }}">{{ $p->nome }}</option>
+                                @endforeach
+
+                            </select>
+
+                            <script>
+                                $('option').mousedown(function(e) {
+                                    e.preventDefault();
+                                    $(this).prop('selected', !$(this).prop('selected'));
+                                    return false;
+                                });
+                            </script>
+
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        <input type="submit" name="assimilar" value="Assimilar" class="btn btn-warning">
+                    </div>
+                </form>
+        </div>
+    </div>
+</div>
+
 <div class="modal fade" id="upar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
     <div class="modal-dialog">
@@ -138,51 +192,6 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                         <input type="submit" name="Deletar" value="Deletar" class="btn btn-danger">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="assimilar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form method="post" action=" {{ route('assimilar-gravacao', ['id' => $g->id]) }} ">
-                    @csrf
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Assimilar Gravação</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label for="protocolos-assimilar">Protocolos</label>
-
-                            <select multiple="multiple" class="protocolos form-control" name="protocolos-assimilar[]"
-                                    id="protocolos-assimilar">
-
-                                @foreach($protocolos as $p)
-                                    <option value="{{ $p->id }}">{{ $p->nome }}</option>
-                                @endforeach
-
-                            </select>
-
-                            <script>
-                                $('option').mousedown(function(e) {
-                                    e.preventDefault();
-                                    $(this).prop('selected', !$(this).prop('selected'));
-                                    return false;
-                                });
-                            </script>
-
-                        </div>
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                        <input type="submit" name="assimilar" value="Assimilar" class="btn btn-warning">
                     </div>
                 </form>
             </div>

@@ -85,14 +85,14 @@
 </head>
 <body>
 
-<audio src="{{ URL::asset('teste.wav') }}" autoplay id="audioFundo">
-    bla bla bla
-</audio>
+{{--<audio src="{{ URL::asset('teste.wav') }}" autoplay id="audioFundo">--}}
+{{--    bla bla bla--}}
+{{--</audio>--}}
 
-<script>
-    var audio = document.getElementById("audioFundo");
-    audio.volume = 0.1 ;
-</script>
+{{--<script>--}}
+{{--    var audio = document.getElementById("audioFundo");--}}
+{{--    audio.volume = 0.1 ;--}}
+{{--</script>--}}
 
 <div class="flex-center position-ref full-height">
     @if (Route::has('login'))
