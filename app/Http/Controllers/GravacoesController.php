@@ -34,7 +34,6 @@ class GravacoesController extends Controller
     public function exibirGravacoes()
     {
         $gravacoes = $this->gravacoesRepository->getGravacoes ();
-        
         $protocolos = $this->protocolosRepository->getProtocoloNome ();
         return view ('verGravacoes', compact (['gravacoes', 'protocolos', 'gravacaoDados']));
     }

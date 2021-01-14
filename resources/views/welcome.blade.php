@@ -154,8 +154,8 @@
                 setcountdown(2021, 12, 31)
 
 
-                var occasion = "ativar PROTOCOLO/COMO_SE_FOSSE_A_PRIMEIRA_VEZ"
-                var message_on_occasion = "Protocolo/COMO_SE_FOSSE_A_PRIMEIRA_VEZ foi ativado."
+                var occasion = "ativar o sistema."
+                var message_on_occasion = "Sistema ativado."
 
 
 
