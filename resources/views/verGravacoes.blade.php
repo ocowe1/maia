@@ -54,6 +54,7 @@
                                                 <button data-toggle="modal" data-target="#assimilar"
                                                         class="btn btn-warning">Assimilar
                                                 </button>
+                                                <input type="hidden" id="idG" value="{{$g->id}}">
                                                 <button data-toggle="modal" data-target="#deletar"
                                                         class="btn btn-danger">Deletar
                                                 </button>
@@ -129,6 +130,10 @@
                 <form method="post" action="{{ route('assimilar-gravacao', ['id' => $g->id]) }}">
                     @endforeach
                     @csrf
+                    <script>
+                        var idG = document.getElementById('idG')
+                        console.log(idG)
+                    </script>
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Assimilar Gravação</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">

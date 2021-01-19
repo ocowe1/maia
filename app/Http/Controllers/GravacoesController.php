@@ -35,7 +35,7 @@ class GravacoesController extends Controller
     {
         $gravacoes = $this->gravacoesRepository->getGravacoes ();
         $protocolos = $this->protocolosRepository->getProtocoloNome ();
-        return view ('verGravacoes', compact (['gravacoes', 'protocolos', 'gravacaoDados']));
+        return view ('verGravacoes', compact (['gravacoes', 'protocolos']));
     }
 
     public function upload()
