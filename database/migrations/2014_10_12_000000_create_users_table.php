@@ -31,9 +31,9 @@ class CreateUsersTable extends Migration
                 [
                     'name' => 'Vinicius Costa Santos',
                     'tipo' => 1,
-                    'celular' => '13981575072',
-                    'email' => 'viniciusath@hotmail.com',
-                    'password' => \Illuminate\Support\Facades\Hash::make('Zulo!1999.'),
+                    'celular' => '0',
+                    'email' => '0',
+                    'password' => \Illuminate\Support\Facades\Hash::make('0'),
                 ]
             ]);
 
